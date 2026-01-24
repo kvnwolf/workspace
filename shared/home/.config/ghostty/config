@@ -1,0 +1,47 @@
+# Ghostty theme
+theme = Catppuccin Mocha
+
+# Updates
+auto-update-channel = tip
+
+# Shell integrations
+shell-integration = fish
+quit-after-last-window-closed = true
+
+# Font
+font-family = GeistMono Nerd Font Mono
+font-style = Regular
+font-style-italic = Regular Italic
+font-style-bold = Bold
+font-style-bold-italic = Bold Italic
+font-size = 13
+adjust-cell-height = 12
+
+# Opacity of split windows
+unfocused-split-opacity = 0.97  
+
+# Set the background-opacity to be fully opaque
+background-opacity = 1.0
+
+# Cursor style
+cursor-style-blink = true
+
+# Clipboard settings
+clipboard-read = allow
+clipboard-write = allow
+
+# macos options
+macos-option-as-alt = right
+macos-titlebar-proxy-icon = hidden
+
+# Window settings
+window-width = 90
+window-height = 30
+window-colorspace = display-p3
+window-padding-color = background
+window-padding-balance = true
+window-padding-x = 16
+window-padding-y = 16
+
+# Decrease scroll sensitivity
+mouse-scroll-multiplier = 0.5

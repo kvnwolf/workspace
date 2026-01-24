@@ -1,0 +1,27 @@
+[core]
+	pager = delta
+
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+
+[delta]
+	hyperlinks = true
+	hyperlinks-file-link-format = vscode://file/{path}:{line}
+	line-numbers = true
+	navigate = true
+
+[init]
+	defaultBranch = main
+
+[merge]
+	conflictstyle = diff3
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[user]
+	email = hi@kvnwolf.com
+	name = Kevin Wolf

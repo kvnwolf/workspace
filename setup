@@ -1,0 +1,227 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# =============================================================================
+# Utilities
+# =============================================================================
+
+# Colors
+readonly RED='\033[0;31m'
+readonly GREEN='\033[0;32m'
+readonly YELLOW='\033[0;33m'
+readonly BLUE='\033[0;34m'
+readonly MAGENTA='\033[0;35m'
+readonly CYAN='\033[0;36m'
+readonly RESET='\033[0m'
+readonly BOLD='\033[1m'
+readonly DIM='\033[2m'
+
+# Layout
+readonly INDENT='  '
+
+# Logging
+print_banner() {
+  clear
+  echo ""
+  echo -e "${YELLOW}    ✦  ${DIM}.  ·                                                                    ·  .${RESET}  ${YELLOW}✦${RESET}"
+  echo -e "${YELLOW}    .__  ___  ___________    ____  __  .__   __.    ____    __    ____  ______    __       _______${RESET}"
+  echo -e "${YELLOW}    |  |/  / |   ____\\   \\  /   / |  | |  \\ |  |    \\   \\  /  \\  /   / /  __  \\  |  |     |   ____|${RESET}"
+  echo -e "${YELLOW}    |  '  /  |  |__   \\   \\/   /  |  | |   \\|  |     \\   \\/    \\/   / |  |  |  | |  |     |  |__${RESET}"
+  echo -e "${YELLOW}    |    <   |   __|   \\      /   |  | |  . \`  |      \\            /  |  |  |  | |  |     |   __|${RESET}"
+  echo -e "${YELLOW}    |  .  \\  |  |____   \\    /    |  | |  |\\   |       \\    /\\    /   |  \`--'  | |  \`----.|  |${RESET}"
+  echo -e "${YELLOW}    |__|\\__\\ |_______|   \\__/     |__| |__| \\__|        \\__/  \\__/     \\______/  |_______||__|${RESET}"
+  echo -e "${DIM}    ·                                                                                           ·${RESET}"
+  echo -e "${YELLOW}   .____    __    ____  ______   .______       __  ___      _______..______      ___       ______  _______${RESET}"
+  echo -e "${YELLOW}    \\   \\  /  \\  /   / /  __  \\  |   _  \\     |  |/  /     /       ||   _  \\    /   \\     /      ||   ____|${RESET}"
+  echo -e "${YELLOW}     \\   \\/    \\/   / |  |  |  | |  |_)  |    |  '  /     |   (----\`|  |_)  |  /  ^  \\   |  ,----'|  |__${RESET}"
+  echo -e "${YELLOW}      \\            /  |  |  |  | |      /     |    <       \\   \\    |   ___/  /  /_\\  \\  |  |     |   __|${RESET}"
+  echo -e "${YELLOW}       \\    /\\    /   |  \`--'  | |  |\\  \\----.|  .  \\  .----)   |   |  |     /  _____  \\ |  \`----.|  |____${RESET}"
+  echo -e "${YELLOW}        \\__/  \\__/     \\______/  | _| \`._____||__|\\__\\ |_______/    | _|    /__/     \\__\\ \\______||_______|${RESET}"
+  echo -e "${YELLOW}    ✦  ${DIM}.  ·                                                                    ·  .${RESET}  ${YELLOW}✦${RESET}"
+  echo ""
+  echo ""
+  echo ""
+  echo -e "${INDENT}${BOLD}Hey! I'm Kevin Wolf${RESET} ${DIM}—${RESET} ${CYAN}https://kvnwolf.com${RESET}"
+  echo ""
+  echo -e "${INDENT}You're about to configure your workspace with my setup, tools, and preferences."
+  echo -e "${INDENT}Questions or feedback? Reach me at ${MAGENTA}hi@kvnwolf.com${RESET}"
+  echo -ne "\n${INDENT}${DIM}Press ${BOLD}ENTER${RESET}${DIM} to continue or ${BOLD}ESC${RESET}${DIM} to abort.${RESET}"
+  while true; do
+    read -rsn1 key
+    if [[ "$key" == "" ]]; then
+      echo -ne "\r\033[K\033[1A"
+      break
+    elif [[ "$key" == $'\x1b' ]]; then
+      echo -ne "\r\033[K"
+      print_info "Setup aborted."
+      exit 0
+    fi
+  done
+}
+
+print_header() {
+  echo -e "\n${INDENT}${BLUE}◆${RESET} ${BOLD}$1${RESET}"
+}
+
+print_success() {
+  echo -e "${INDENT}${GREEN}✓${RESET} $1"
+}
+
+print_error() {
+  echo -e "${INDENT}${RED}✗${RESET} $1" >&2
+}
+
+print_warning() {
+  echo -e "${INDENT}${YELLOW}⚠${RESET} $1"
+}
+
+print_info() {
+  echo -e "${INDENT}${CYAN}ℹ${RESET} $1"
+}
+
+print_description() {
+  echo -e "${INDENT}${DIM}$1${RESET}"
+}
+
+# OS Detection
+is_macos() {
+  [[ "$OSTYPE" == "darwin"* ]]
+}
+
+is_linux() {
+  [[ "$OSTYPE" == "linux-gnu"* ]]
+}
+
+# Helpers
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+continue_or_skip() {
+  echo -ne "\n${INDENT}${DIM}Press ${BOLD}ENTER${RESET}${DIM} to continue or ${BOLD}ESC${RESET}${DIM} to skip.${RESET}"
+
+  while true; do
+    read -rsn1 key
+    if [[ "$key" == "" ]]; then
+      echo -ne "\r\033[K\033[1A"
+      return 0
+    elif [[ "$key" == $'\x1b' ]]; then
+      echo -ne "\r\033[K\033[1A"
+      return 1
+    fi
+  done
+}
+
+# =============================================================================
+# Welcome
+# =============================================================================
+
+WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+print_banner
+
+# =============================================================================
+# macOS Setup
+# =============================================================================
+
+if is_macos; then
+  print_header "System Defaults"
+  print_description "Configures macOS system preferences for a better development experience."
+  if continue_or_skip; then
+    echo ""
+    defaults write com.apple.dock autohide -bool true
+    defaults write com.apple.dock show-recents -bool false
+    defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+    defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+    defaults write NSGlobalDomain InitialKeyRepeat -int 15
+    defaults write NSGlobalDomain KeyRepeat -int 2
+    killall Dock Finder 2>/dev/null || true
+    print_success "macOS defaults applied"
+  else
+    echo ""
+    print_info "Skipped"
+  fi
+
+  print_header "Homebrew Packages"
+  print_description "Installs CLI tools and GUI apps from Brewfile."
+  if continue_or_skip; then
+    if ! command_exists brew; then
+      echo ""
+      print_info "Installing Homebrew..."
+      bash <(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+      print_success "Homebrew installed"
+    else
+      echo ""
+      print_success "Homebrew already installed"
+    fi
+
+    echo ""
+    print_info "Installing packages from Brewfile..."
+    brew update --quiet
+    brew upgrade --quiet
+    brew bundle --file="${WORKSPACE_DIR}/macos/Brewfile" --quiet
+    brew cleanup --quiet
+    print_success "Packages installed"
+  else
+    echo ""
+    print_info "Skipped"
+  fi
+
+  if [[ -d "${WORKSPACE_DIR}/macos/home" ]]; then
+    print_header "macOS Dotfiles"
+    print_description "Creates symlinks for macOS-specific configuration files."
+    if continue_or_skip; then
+      echo ""
+      stow --no-folding -d "${WORKSPACE_DIR}/macos" -t ~ home
+      print_success "macOS dotfiles stowed"
+    else
+      echo ""
+      print_info "Skipped"
+    fi
+  fi
+fi
+
+# =============================================================================
+# Linux Setup
+# =============================================================================
+
+if is_linux; then
+  print_error "Linux setup not implemented yet"
+  exit 1
+fi
+
+# =============================================================================
+# Shared Setup
+# =============================================================================
+
+if [[ -d "${WORKSPACE_DIR}/shared/home" ]]; then
+  print_header "Shared Dotfiles"
+  print_description "Creates symlinks for cross-platform configuration (fish, git, starship)."
+  if continue_or_skip; then
+    echo ""
+    stow --no-folding -d "${WORKSPACE_DIR}/shared" -t ~ home
+    print_success "Shared dotfiles stowed"
+  else
+    echo ""
+    print_info "Skipped"
+  fi
+fi
+
+if command_exists fish; then
+  print_header "Default Shell"
+  print_description "Changes your login shell to fish."
+  if continue_or_skip; then
+    echo ""
+    fish_path=$(which fish)
+    if ! grep -q "$fish_path" /etc/shells; then
+      print_info "Adding fish to /etc/shells..."
+      echo "$fish_path" | sudo tee -a /etc/shells
+    fi
+    chsh -s "$fish_path"
+    print_success "Default shell changed to fish"
+  else
+    echo ""
+    print_info "Skipped"
+  fi
+fi
