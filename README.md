@@ -194,7 +194,6 @@ All listing commands follow the pattern `l[t][a][f][N]` where:
 
 **Configuration:**
 
-- Model: Opus
 - Co-authored-by: Disabled
 - Status line: Custom script showing directory, git branch, model, and context usage
 
