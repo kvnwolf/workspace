@@ -177,8 +177,12 @@ All listing commands follow the pattern `l[t][a][f][N]` where:
 | `brl` | `bun run lint` |
 | `brm` | `bun remove` |
 | `brs` | `bun run setup` |
+| `bru` | `bun run update` |
+| `brun` | `bun run unused` |
 | `brv` | `bun run validate` |
 | `bx` | `bunx` |
+| `sk` | `bunx skills@latest` |
+| `vc` | `bunx vercel@latest` |
 
 ### Claude Code
 
