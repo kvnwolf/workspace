@@ -197,6 +197,31 @@ All listing commands follow the pattern `l[t][a][f][N]` where:
 - Co-authored-by: Disabled
 - Status line: Custom script showing directory, git branch, model, and context usage
 
+### Workspace
+
+Run Claude in the workspace directory from anywhere. Useful for configuring your workspace remotely.
+
+| Function | Description |
+|----------|-------------|
+| `ws <prompt>` | Non-interactive mode with streaming output |
+| `wsi [args]` | Interactive mode |
+
+**Examples:**
+
+```bash
+# Install a package and add to Brewfile
+ws "install ripgrep via brew and add it to the Brewfile"
+
+# Add a new fish abbreviation
+ws "add abbreviation 'gc' for 'git commit'"
+
+# Adopt a local config file into the repo
+ws "adopt ~/.config/tool/config into shared dotfiles"
+
+# Start interactive session in workspace
+wsi
+```
+
 ### VS Code
 
 | Abbr | Command |
