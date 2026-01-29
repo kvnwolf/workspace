@@ -24,9 +24,3 @@ Fight entropy. Leave the codebase better than you found it.
 - When interacting with GitHub use the `gh` cli
 - When performing web searches that require a year, **ALWAYS** use the **CURRENT YEAR** (2026)
 - When running git commands, do NOT use `git -C <path>` - use the working directory directly
-
-# Skills
-
-**BEFORE** starting any task, review available skills. If a skill exists for the task at hand, **USE IT** - do not improvise workflows or invent methodologies.
-
-Skills encode tested patterns and domain knowledge. Trust them over ad-hoc approaches.

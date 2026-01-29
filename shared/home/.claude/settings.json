@@ -4,5 +4,23 @@
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 0
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "statusMessage": "Evaluating skills...",
+            "command": "~/.claude/hooks/evaluate-skills.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bunx skills@latest find *)"
+    ]
   }
 }
