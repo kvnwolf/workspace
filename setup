@@ -98,7 +98,7 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-continue_or_skip() {
+should_continue() {
   echo -ne "\n${INDENT}${DIM}Press ${BOLD}ENTER${RESET}${DIM} to continue or ${BOLD}ESC${RESET}${DIM} to skip.${RESET}"
 
   while true; do
@@ -117,7 +117,7 @@ continue_or_skip() {
 # Welcome
 # =============================================================================
 
-WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WORKSPACE_SETUP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 print_banner
 
 # =============================================================================
@@ -127,7 +127,7 @@ print_banner
 if is_macos; then
   print_header "System Defaults"
   print_description "Configures macOS system preferences for a better development experience."
-  if continue_or_skip; then
+  if should_continue; then
     echo ""
     defaults write com.apple.dock autohide -bool true
     defaults write com.apple.dock show-recents -bool false
@@ -144,7 +144,7 @@ if is_macos; then
 
   print_header "Homebrew Packages"
   print_description "Installs CLI tools and GUI apps from Brewfile."
-  if continue_or_skip; then
+  if should_continue; then
     if ! command_exists brew; then
       echo ""
       print_info "Installing Homebrew..."
@@ -160,7 +160,7 @@ if is_macos; then
     print_info "Installing packages from Brewfile..."
     brew update --quiet
     brew upgrade --quiet
-    brew bundle --file="${WORKSPACE_DIR}/macos/Brewfile" --quiet
+    brew bundle --file="${WORKSPACE_SETUP_DIR}/macos/Brewfile" --quiet
     brew cleanup --quiet
     print_success "Packages installed"
   else
@@ -168,12 +168,12 @@ if is_macos; then
     print_info "Skipped"
   fi
 
-  if [[ -d "${WORKSPACE_DIR}/macos/home" ]]; then
+  if [[ -d "${WORKSPACE_SETUP_DIR}/macos/home" ]]; then
     print_header "macOS Dotfiles"
     print_description "Creates symlinks for macOS-specific configuration files."
-    if continue_or_skip; then
+    if should_continue; then
       echo ""
-      stow --no-folding -d "${WORKSPACE_DIR}/macos" -t ~ home
+      stow --no-folding -d "${WORKSPACE_SETUP_DIR}/macos" -t ~ home
       print_success "macOS dotfiles stowed"
     else
       echo ""
@@ -195,12 +195,12 @@ fi
 # Shared Setup
 # =============================================================================
 
-if [[ -d "${WORKSPACE_DIR}/shared/home" ]]; then
+if [[ -d "${WORKSPACE_SETUP_DIR}/shared/home" ]]; then
   print_header "Shared Dotfiles"
   print_description "Creates symlinks for cross-platform configuration (fish, git, starship)."
-  if continue_or_skip; then
+  if should_continue; then
     echo ""
-    stow --no-folding -d "${WORKSPACE_DIR}/shared" -t ~ home
+    stow --no-folding -d "${WORKSPACE_SETUP_DIR}/shared" -t ~ home
     print_success "Shared dotfiles stowed"
   else
     echo ""
@@ -211,7 +211,7 @@ fi
 if command_exists fish; then
   print_header "Default Shell"
   print_description "Changes your login shell to fish."
-  if continue_or_skip; then
+  if should_continue; then
     echo ""
     fish_path=$(which fish)
     if ! grep -q "$fish_path" /etc/shells; then
