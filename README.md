@@ -54,6 +54,7 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [git-delta](https://github.com/dandavison/delta) | | Syntax-highlighting pager for git |
 | [jq](https://jqlang.github.io/jq/) | | JSON processor |
 | [lazygit](https://github.com/jesseduffield/lazygit) | | Git TUI |
+| [mole](https://github.com/tw93/Mole) | | macOS system cleanup and optimization tool |
 | [procs](https://github.com/dalance/procs) | `ps` | Colored output, tree view, searchable |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | `grep` | Much faster, respects .gitignore, better defaults |
 | [sd](https://github.com/chmln/sd) | | Intuitive find & replace |
@@ -75,9 +76,10 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [Ghostty](https://ghostty.org/) | GPU-accelerated terminal |
 | [Google Chrome](https://www.google.com/chrome/) | Web browser |
 | [LocalXpose](https://localxpose.io/) | Reverse proxy for localhost |
+| [Monologue](https://www.monologue.to/) | Voice dictation |
 | [OrbStack](https://orbstack.dev/) | Docker & Linux on macOS |
 | [Raycast](https://raycast.com/) | Productivity launcher |
-| [Superwhisper](https://superwhisper.com/) | Voice-to-text |
+| [Slack](https://slack.com/) | Team communication |
 | [Vanilla](https://matthewpalmer.net/vanilla/) | Menu bar organizer |
 | [Visual Studio Code](https://code.visualstudio.com/) | Code editor |
 | [WhatsApp](https://www.whatsapp.com/) | Messaging app |
