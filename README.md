@@ -182,11 +182,21 @@ All listing commands follow the pattern `l[t][a][f][N]` where:
 
 ### Claude Code
 
+**Abbreviations:**
+
+All Claude commands follow the pattern `cl[c|r][d]` where:
+- `c` = continue most recent conversation
+- `r` = resume by session ID
+- `d` = enable debug mode
+
 | Abbr | Command |
 |------|---------|
 | `cl` | `claude` |
 | `clc` | `claude --continue` |
 | `clr` | `claude --resume` |
+| `cld` | `claude --debug` |
+| `clcd` | `claude --continue --debug` |
+| `clrd` | `claude --resume --debug` |
 
 **Configuration:**
 
