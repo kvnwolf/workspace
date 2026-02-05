@@ -20,8 +20,8 @@ adjust-cell-height = 12
 # Opacity of split windows
 unfocused-split-opacity = 0.97  
 
-# Set the background-opacity to be fully opaque
-background-opacity = 1.0
+background-opacity = 0.90
+background-blur-radius = 50
 
 # Cursor style
 cursor-style-blink = true

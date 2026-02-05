@@ -253,6 +253,7 @@ Custom prompt showing:
 - **Auto-quit**: When last window closes
 - **Option key**: Right Option as Alt
 - **Window padding**: 16px
+- **Background opacity**: 90% with blur (radius 50)
 - **Scroll sensitivity**: Reduced (0.5x)
 
 ## How Stow Works
