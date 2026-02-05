@@ -184,9 +184,10 @@ All listing commands follow the pattern `l[t][a][f][N]` where:
 
 **Abbreviations:**
 
-All Claude commands follow the pattern `cl[c|r][d]` where:
+All Claude commands follow the pattern `cl[c|r][s][d]` where:
 - `c` = continue most recent conversation
 - `r` = resume by session ID
+- `s` = skip permissions
 - `d` = enable debug mode
 
 | Abbr | Command |
@@ -194,9 +195,15 @@ All Claude commands follow the pattern `cl[c|r][d]` where:
 | `cl` | `claude` |
 | `clc` | `claude --continue` |
 | `clr` | `claude --resume` |
+| `cls` | `claude --dangerously-skip-permissions` |
 | `cld` | `claude --debug` |
+| `clcs` | `claude --continue --dangerously-skip-permissions` |
+| `clrs` | `claude --resume --dangerously-skip-permissions` |
+| `clsd` | `claude --dangerously-skip-permissions --debug` |
 | `clcd` | `claude --continue --debug` |
 | `clrd` | `claude --resume --debug` |
+| `clcsd` | `claude --continue --dangerously-skip-permissions --debug` |
+| `clrsd` | `claude --resume --dangerously-skip-permissions --debug` |
 
 **Configuration:**
 

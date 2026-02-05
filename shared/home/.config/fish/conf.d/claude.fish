@@ -10,6 +10,10 @@ function __claude_cmd
         set -a opts --resume
     end
 
+    if string match -qr 's' $flags
+        set -a opts --dangerously-skip-permissions
+    end
+
     if string match -qr 'd' $flags
         set -a opts --debug
     end
@@ -17,4 +21,4 @@ function __claude_cmd
     echo claude $opts
 end
 
-abbr --add cl --regex '^cl[cr]?d?$' --function __claude_cmd
+abbr --add cl --regex '^cl[cr]?s?d?$' --function __claude_cmd
