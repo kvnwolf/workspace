@@ -62,6 +62,7 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [stow](https://www.gnu.org/software/stow/) | | Symlink farm manager |
 | [tldr](https://tldr.sh/) | `man` | Practical examples instead of verbose manuals |
 | [tokei](https://github.com/XAMPPRocky/tokei) | | Code statistics |
+| [yazi](https://github.com/sxyazi/yazi) | | Blazing fast terminal file manager |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | | Smarter directory jumping |
 
 ### GUI Applications
@@ -223,6 +224,12 @@ ws "adopt ~/.config/tool/config into shared dotfiles"
 # Start interactive session in workspace
 wsi
 ```
+
+### Yazi
+
+| Abbr | Command |
+|------|---------|
+| `y` | `yazi` |
 
 ### VS Code
 

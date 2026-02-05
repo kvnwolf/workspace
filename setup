@@ -208,6 +208,19 @@ if [[ -d "${WORKSPACE_SETUP_DIR}/shared/home" ]]; then
   fi
 fi
 
+if command_exists ya; then
+  print_header "Yazi Plugins"
+  print_description "Installs plugins and flavors defined in yazi's package.toml."
+  if should_continue; then
+    echo ""
+    ya pack -i
+    print_success "Yazi plugins installed"
+  else
+    echo ""
+    print_info "Skipped"
+  fi
+fi
+
 if command_exists fish; then
   print_header "Default Shell"
   print_description "Changes your login shell to fish."

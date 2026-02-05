@@ -21,6 +21,7 @@ brew "starship"
 brew "stow"
 brew "tldr"
 brew "tokei"
+brew "yazi"
 brew "zoxide"
 
 tap "oven-sh/bun"
