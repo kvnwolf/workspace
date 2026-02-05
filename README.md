@@ -116,13 +116,6 @@ Fish shell becomes the default shell. Below are all shortcuts and configurations
 | `gfa` | `git fetch --all --tags --prune` | `glog` | `git log --oneline --decorate --graph` |
 | `lg` | `lazygit` | `gloga` | `git log --oneline --decorate --graph --all` |
 
-**Functions:**
-
-| Function | Description |
-|----------|-------------|
-| `gaac "message"` | Add all files and commit with message |
-| `gaacp "message"` | Add all, commit, and push |
-
 **Configuration:**
 
 - Default branch: `main`
