@@ -1,4 +1,9 @@
-> **IMPORTANT**: Keep this file updated when making significant changes to the repo structure, conventions, or workflows.
+## Documentation
+
+| File | Purpose | Update When |
+|------|---------|-------------|
+| `README.md` | User-facing documentation: tools, shortcuts, configurations, installation guide | Fish abbreviations/functions change, CLI tools or casks are added/removed, shell shortcuts change, Ghostty/Starship config changes |
+| `CLAUDE.md` | Developer/AI instructions: conventions, workflows, configuration patterns | Directory structure changes, naming conventions change, config file locations/formats change, stow workflows are modified |
 
 ## Structure
 
@@ -69,8 +74,7 @@ Edit `shared/home/.config/starship.toml`. TOML format with module sections.
 
 ## Configuring Claude CLI
 
-- `shared/home/.claude/settings.json` → model, statusline config
-- `shared/home/.claude/CLAUDE.md` → global instructions
+- `shared/home/.claude/settings.json` → statusline config, permissions
 - `shared/home/.claude/statusline.sh` → custom statusline script (receives JSON via stdin)
 
 ## Syncing Dotfiles
@@ -109,16 +113,3 @@ stow --adopt --no-folding -d shared -t ~ home
 ```
 
 Use `shared/` for cross-platform config, `macos/` for macOS-only.
-
-## IMPORTANT: Keeping Documentation Updated
-
-When making changes to this repo, **ALWAYS** update the corresponding documentation **in the same session**:
-
-- `README.md` → User-facing documentation (tools, shortcuts, configurations)
-- `CLAUDE.md` → Developer/AI instructions (conventions, workflows)
-
-Examples of when to update:
-- Adding/removing/renaming abbreviations or functions → Update README.md shortcuts tables
-- Changing naming conventions or patterns → Update CLAUDE.md naming patterns
-- Adding new tools or configurations → Update both files as appropriate
-- Modifying file structure or workflows → Update CLAUDE.md conventions
