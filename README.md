@@ -210,6 +210,14 @@ All listing commands follow the pattern `l[t][a][f][N]` where:
 - Pager: delta with line numbers and hyperlinks
 - Credential helper: GitHub CLI
 
+### GitHub
+
+| Function | Description |
+|----------|-------------|
+| `fork <owner/repo>` | Fork a repo, clone to `~/Developer/github.com/<owner>/<repo>`, set up remotes (`origin` = fork, `upstream` = original), and configure `gh` default repo |
+
+Also accepts full GitHub URLs: `fork https://github.com/owner/repo`
+
 ### Neovim
 
 **Abbreviations:**
