@@ -1,2 +1,6 @@
-# claude
-.claude/settings.local.json
+# base
+*.local*
+*.tsbuildinfo
+.claude/skills
+.DS_Store
+node_modules

@@ -78,6 +78,7 @@ Edit `shared/home/.config/nvim/`. LazyVim-based. Config in `lua/config/*.lua`, p
 
 ## Configuring Claude CLI
 
+- `shared/home/.claude/CLAUDE.md` → personal global instructions for Claude CLI
 - `shared/home/.claude/settings.json` → statusline config, permissions
 - `shared/home/.claude/statusline.sh` → custom statusline script (receives JSON via stdin)
 
