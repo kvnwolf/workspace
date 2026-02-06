@@ -71,6 +71,7 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | Application | Description |
 |-------------|-------------|
 | [1Password](https://1password.com/) | Password manager |
+| [Caffeine](https://intelliscapesolutions.com/apps/caffeine) | Prevent Mac from going to sleep |
 | [Claude](https://claude.ai/) | AI assistant app |
 | [Claude Code](https://claude.ai/code) | AI coding assistant CLI |
 | [CleanShot](https://cleanshot.com/) | Screenshot and recording tool |

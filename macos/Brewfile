@@ -29,6 +29,7 @@ tap "oven-sh/bun"
 brew "oven-sh/bun/bun"
 
 cask "1password"
+cask "caffeine"
 cask "claude"
 cask "claude-code"
 cask "cleanshot"
