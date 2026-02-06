@@ -1,6 +1,5 @@
 # base
 *.local*
 *.tsbuildinfo
-.claude/skills
 .DS_Store
 node_modules
