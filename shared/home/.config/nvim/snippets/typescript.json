@@ -1,0 +1,243 @@
+{
+  "Interface": {
+    "prefix": "int",
+    "body": [
+      "interface ${1:Name} {",
+      "  $0",
+      "}"
+    ],
+    "description": "TypeScript interface"
+  },
+  "Interface Extends": {
+    "prefix": "inte",
+    "body": [
+      "interface ${1:Name} extends ${2:Base} {",
+      "  $0",
+      "}"
+    ],
+    "description": "TypeScript interface with extends"
+  },
+  "Type Alias": {
+    "prefix": "typ",
+    "body": [
+      "type ${1:Name} = {",
+      "  $0",
+      "}"
+    ],
+    "description": "TypeScript type alias"
+  },
+  "Type Union": {
+    "prefix": "typu",
+    "body": [
+      "type ${1:Name} = ${2:TypeA} | ${3:TypeB}"
+    ],
+    "description": "TypeScript union type"
+  },
+  "Type Intersection": {
+    "prefix": "typi",
+    "body": [
+      "type ${1:Name} = ${2:TypeA} & ${3:TypeB}"
+    ],
+    "description": "TypeScript intersection type"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:Name} {",
+      "  ${2:Value} = \"${2}\",",
+      "  $0",
+      "}"
+    ],
+    "description": "TypeScript enum"
+  },
+  "Const Assertion Object": {
+    "prefix": "cobj",
+    "body": [
+      "const ${1:name} = {",
+      "  $0",
+      "} as const"
+    ],
+    "description": "Object with const assertion"
+  },
+  "Async Function": {
+    "prefix": "af",
+    "body": [
+      "async function ${1:name}(${2:params}): Promise<${3:void}> {",
+      "  $0",
+      "}"
+    ],
+    "description": "Async function"
+  },
+  "Async Arrow Function": {
+    "prefix": "aaf",
+    "body": [
+      "const ${1:name} = async (${2:params}): Promise<${3:void}> => {",
+      "  $0",
+      "}"
+    ],
+    "description": "Async arrow function"
+  },
+  "Arrow Function": {
+    "prefix": "arfn",
+    "body": [
+      "const ${1:name} = (${2:params}) => {",
+      "  $0",
+      "}"
+    ],
+    "description": "Arrow function"
+  },
+  "Export Function": {
+    "prefix": "efn",
+    "body": [
+      "export function ${1:name}(${2:params}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Exported function"
+  },
+  "Export Async Function": {
+    "prefix": "eaf",
+    "body": [
+      "export async function ${1:name}(${2:params}): Promise<${3:void}> {",
+      "  $0",
+      "}"
+    ],
+    "description": "Exported async function"
+  },
+  "Export Const": {
+    "prefix": "ec",
+    "body": [
+      "export const ${1:name} = $0"
+    ],
+    "description": "Exported const"
+  },
+  "Export Default": {
+    "prefix": "ed",
+    "body": [
+      "export default $0"
+    ],
+    "description": "Export default"
+  },
+  "Export Type": {
+    "prefix": "et",
+    "body": [
+      "export type ${1:Name} = {",
+      "  $0",
+      "}"
+    ],
+    "description": "Exported type"
+  },
+  "Try Catch": {
+    "prefix": "tc",
+    "body": [
+      "try {",
+      "  $0",
+      "} catch (error) {",
+      "  console.error(error)",
+      "}"
+    ],
+    "description": "Try-catch block"
+  },
+  "Try Catch Finally": {
+    "prefix": "tcf",
+    "body": [
+      "try {",
+      "  $0",
+      "} catch (error) {",
+      "  console.error(error)",
+      "} finally {",
+      "  ${1:// cleanup}",
+      "}"
+    ],
+    "description": "Try-catch-finally block"
+  },
+  "Promise": {
+    "prefix": "prom",
+    "body": [
+      "new Promise<${1:void}>((resolve, reject) => {",
+      "  $0",
+      "})"
+    ],
+    "description": "New Promise"
+  },
+  "Console Log": {
+    "prefix": "cl",
+    "body": [
+      "console.log($0)"
+    ],
+    "description": "Console log"
+  },
+  "Console Log Variable": {
+    "prefix": "clv",
+    "body": [
+      "console.log(\"${1:label}:\", ${1})"
+    ],
+    "description": "Console log with label"
+  },
+  "Console Error": {
+    "prefix": "ce",
+    "body": [
+      "console.error($0)"
+    ],
+    "description": "Console error"
+  },
+  "If Statement": {
+    "prefix": "iff",
+    "body": [
+      "if (${1:condition}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If Else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:condition}) {",
+      "  $2",
+      "} else {",
+      "  $0",
+      "}"
+    ],
+    "description": "If-else statement"
+  },
+  "Ternary": {
+    "prefix": "ter",
+    "body": [
+      "${1:condition} ? ${2:then} : ${3:else}"
+    ],
+    "description": "Ternary expression"
+  },
+  "For Of Loop": {
+    "prefix": "forof",
+    "body": [
+      "for (const ${1:item} of ${2:items}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "For-of loop"
+  },
+  "Destructure Object": {
+    "prefix": "dobj",
+    "body": [
+      "const { $0 } = ${1:object}"
+    ],
+    "description": "Object destructuring"
+  },
+  "Destructure Array": {
+    "prefix": "darr",
+    "body": [
+      "const [${1:first}, ${2:second}] = ${3:array}"
+    ],
+    "description": "Array destructuring"
+  },
+  "Immediately Invoked Function": {
+    "prefix": "iife",
+    "body": [
+      ";(async () => {",
+      "  $0",
+      "})()"
+    ],
+    "description": "Async IIFE"
+  }
+}

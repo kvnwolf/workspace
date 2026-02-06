@@ -1,0 +1,233 @@
+{
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "export function ${1:Component}({ ${2:props} }: ${1}Props) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "React functional component with props"
+  },
+  "React Functional Component Default Export": {
+    "prefix": "rfce",
+    "body": [
+      "export default function ${1:Component}({ ${2:props} }: ${1}Props) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "React functional component with default export"
+  },
+  "React Arrow Component": {
+    "prefix": "rac",
+    "body": [
+      "export const ${1:Component} = ({ ${2:props} }: ${1}Props) => {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "React arrow function component"
+  },
+  "useState": {
+    "prefix": "us",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<${2:type}>(${3:initial})"
+    ],
+    "description": "useState hook"
+  },
+  "useEffect": {
+    "prefix": "ue",
+    "body": [
+      "useEffect(() => {",
+      "  $0",
+      "}, [${1:deps}])"
+    ],
+    "description": "useEffect hook"
+  },
+  "useEffect Cleanup": {
+    "prefix": "uec",
+    "body": [
+      "useEffect(() => {",
+      "  $0",
+      "",
+      "  return () => {",
+      "    ${1:cleanup}",
+      "  }",
+      "}, [${2:deps}])"
+    ],
+    "description": "useEffect hook with cleanup"
+  },
+  "useRef": {
+    "prefix": "ur",
+    "body": [
+      "const ${1:ref} = useRef<${2:HTMLDivElement}>(${3:null})"
+    ],
+    "description": "useRef hook"
+  },
+  "useMemo": {
+    "prefix": "um",
+    "body": [
+      "const ${1:value} = useMemo(() => {",
+      "  return $0",
+      "}, [${2:deps}])"
+    ],
+    "description": "useMemo hook"
+  },
+  "useCallback": {
+    "prefix": "ucb",
+    "body": [
+      "const ${1:callback} = useCallback(($2) => {",
+      "  $0",
+      "}, [${3:deps}])"
+    ],
+    "description": "useCallback hook"
+  },
+  "useContext": {
+    "prefix": "uctx",
+    "body": [
+      "const ${1:value} = useContext(${2:Context})"
+    ],
+    "description": "useContext hook"
+  },
+  "useReducer": {
+    "prefix": "urd",
+    "body": [
+      "const [${1:state}, dispatch] = useReducer(${2:reducer}, ${3:initialState})"
+    ],
+    "description": "useReducer hook"
+  },
+  "React Context Provider": {
+    "prefix": "rctx",
+    "body": [
+      "import { createContext, useContext, type ReactNode } from \"react\"",
+      "",
+      "type ${1:Name}ContextType = {",
+      "  $2",
+      "}",
+      "",
+      "const ${1}Context = createContext<${1}ContextType | null>(null)",
+      "",
+      "export function use${1}() {",
+      "  const context = useContext(${1}Context)",
+      "  if (!context) {",
+      "    throw new Error(\"use${1} must be used within a ${1}Provider\")",
+      "  }",
+      "  return context",
+      "}",
+      "",
+      "export function ${1}Provider({ children }: { children: ReactNode }) {",
+      "  return (",
+      "    <${1}Context.Provider value={{ $3 }}>",
+      "      {children}",
+      "    </${1}Context.Provider>",
+      "  )",
+      "}"
+    ],
+    "description": "React context with provider and hook"
+  },
+  "React Props Type": {
+    "prefix": "rpt",
+    "body": [
+      "type ${1:Component}Props = {",
+      "  ${2:children}: ${3:ReactNode}",
+      "}"
+    ],
+    "description": "React props type definition"
+  },
+  "React Children Prop": {
+    "prefix": "rch",
+    "body": [
+      "{ children }: { children: ReactNode }"
+    ],
+    "description": "React children prop with type"
+  },
+  "React Fragment": {
+    "prefix": "rfr",
+    "body": [
+      "<>",
+      "  $0",
+      "</>"
+    ],
+    "description": "React fragment shorthand"
+  },
+  "React Conditional Render": {
+    "prefix": "rcr",
+    "body": [
+      "{${1:condition} && (",
+      "  $0",
+      ")}"
+    ],
+    "description": "Conditional rendering"
+  },
+  "React Ternary Render": {
+    "prefix": "rtr",
+    "body": [
+      "{${1:condition} ? (",
+      "  $2",
+      ") : (",
+      "  $3",
+      ")}"
+    ],
+    "description": "Ternary conditional rendering"
+  },
+  "React Map": {
+    "prefix": "rmap",
+    "body": [
+      "{${1:items}.map((${2:item}) => (",
+      "  <${3:div} key={${2}.${4:id}}>",
+      "    $0",
+      "  </${3}>",
+      "))}"
+    ],
+    "description": "Map over array with JSX"
+  },
+  "React Event Handler": {
+    "prefix": "reh",
+    "body": [
+      "const handle${1:Click} = (${2:e}: ${3:React.MouseEvent<HTMLButtonElement>}) => {",
+      "  $0",
+      "}"
+    ],
+    "description": "React event handler"
+  },
+  "React Form Submit Handler": {
+    "prefix": "rfsh",
+    "body": [
+      "const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {",
+      "  e.preventDefault()",
+      "  $0",
+      "}"
+    ],
+    "description": "React form submit handler"
+  },
+  "React Suspense Boundary": {
+    "prefix": "rsus",
+    "body": [
+      "<Suspense fallback={<${1:Loading} />}>",
+      "  $0",
+      "</Suspense>"
+    ],
+    "description": "React Suspense boundary"
+  },
+  "React Custom Hook": {
+    "prefix": "rchk",
+    "body": [
+      "export function use${1:Hook}(${2:params}) {",
+      "  $0",
+      "",
+      "  return { }",
+      "}"
+    ],
+    "description": "Custom React hook"
+  }
+}

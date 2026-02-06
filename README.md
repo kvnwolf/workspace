@@ -55,6 +55,7 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [jq](https://jqlang.github.io/jq/) | | JSON processor |
 | [lazygit](https://github.com/jesseduffield/lazygit) | | Git TUI |
 | [mole](https://github.com/tw93/Mole) | | macOS system cleanup and optimization tool |
+| [neovim](https://neovim.io/) | | Hyperextensible Vim-based text editor |
 | [procs](https://github.com/dalance/procs) | `ps` | Colored output, tree view, searchable |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | `grep` | Much faster, respects .gitignore, better defaults |
 | [sd](https://github.com/chmln/sd) | | Intuitive find & replace |
@@ -82,82 +83,11 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [Raycast](https://raycast.com/) | Productivity launcher |
 | [Slack](https://slack.com/) | Team communication |
 | [Vanilla](https://matthewpalmer.net/vanilla/) | Menu bar organizer |
-| [Visual Studio Code](https://code.visualstudio.com/) | Code editor |
 | [WhatsApp](https://www.whatsapp.com/) | Messaging app |
 
 ## Shell Configuration
 
 Fish shell becomes the default shell. Below are all shortcuts and configurations organized by tool.
-
-### Git
-
-**Abbreviations:**
-
-| Abbr | Command | Abbr | Command |
-|------|---------|------|---------|
-| `g` | `git` | `gp` | `git push` |
-| `ga` | `git add` | `gpb` | `git checkout -` |
-| `gaa` | `git add --all` | `gpf` | `git push --force-with-lease` |
-| `gau` | `git add --update` | `gpr` | `git pull --rebase` |
-| `gb` | `git branch` | `grb` | `git rebase` |
-| `gba` | `git branch --all` | `grba` | `git rebase --abort` |
-| `gbd` | `git branch --delete` | `grbc` | `git rebase --continue` |
-| `gbD` | `git branch --delete --force` | `grbi` | `git rebase --interactive` |
-| `gc` | `git commit --verbose` | `grh` | `git reset` |
-| `gca` | `git commit --verbose --all` | `grhh` | `git reset --hard` |
-| `gcam` | `git commit --all --message` | `gss` | `git status --short` |
-| `gcb` | `git checkout -b` | `gst` | `git status` |
-| `gcmsg` | `git commit --message` | `gsta` | `git stash push` |
-| `gco` | `git checkout` | `gstl` | `git stash list` |
-| `gd` | `git diff` | `gstp` | `git stash pop` |
-| `gds` | `git diff --staged` | `gsw` | `git switch` |
-| `gdt` | `git difftool --tool=difftastic` | `gswc` | `git switch --create` |
-| `gf` | `git fetch` | `gl` | `git pull` |
-| `gfa` | `git fetch --all --tags --prune` | `glog` | `git log --oneline --decorate --graph` |
-| `lg` | `lazygit` | `gloga` | `git log --oneline --decorate --graph --all` |
-
-**Configuration:**
-
-- Default branch: `main`
-- Pull strategy: Rebase
-- Auto-setup remote: Enabled (push without `-u`)
-- Merge conflict style: diff3
-- Pager: delta with line numbers and VS Code hyperlinks
-- Credential helper: GitHub CLI
-
-### Directory Listing & Navigation
-
-**Abbreviations (using eza):**
-
-All listing commands follow the pattern `l[t][a][f][N]` where:
-- `t` = tree view
-- `a` = include hidden files (all)
-- `f` = full details (permissions, size, etc.)
-- `N` = tree depth (only with `t`, default: 1)
-
-| Abbr | Description |
-|------|-------------|
-| `l` | Compact list with icons |
-| `la` | Compact list including hidden files |
-| `lf` | Full details |
-| `laf` | Full details including hidden files |
-| `lt` | Tree view (depth 1) |
-| `lt3` | Tree view (depth 3) |
-| `lta` | Tree view including hidden files |
-| `ltf` | Tree view with full details |
-| `ltaf` | Tree view with hidden files and full details |
-| `ltaf2` | Same as above with depth 2 |
-
-**Navigation:**
-
-| Command | Description |
-|---------|-------------|
-| `..` | `cd ../` |
-| `...` | `cd ../../` |
-| `....` | `cd ../../../` |
-| `z <query>` | Jump to frequently visited directory (zoxide) |
-| `mdcd <dir>` | Create directory and cd into it |
-| `cpwd` | Copy current directory path to clipboard |
 
 ### Bun
 
@@ -210,6 +140,90 @@ All Claude commands follow the pattern `cl[c|r][s][d]` where:
 - Co-authored-by: Disabled
 - Status line: Custom script showing directory, git branch, model, and context usage
 
+### Directory Listing & Navigation
+
+**Abbreviations (using eza):**
+
+All listing commands follow the pattern `l[t][a][f][N]` where:
+- `t` = tree view
+- `a` = include hidden files (all)
+- `f` = full details (permissions, size, etc.)
+- `N` = tree depth (only with `t`, default: 1)
+
+| Abbr | Description |
+|------|-------------|
+| `l` | Compact list with icons |
+| `la` | Compact list including hidden files |
+| `lf` | Full details |
+| `laf` | Full details including hidden files |
+| `lt` | Tree view (depth 1) |
+| `lt3` | Tree view (depth 3) |
+| `lta` | Tree view including hidden files |
+| `ltf` | Tree view with full details |
+| `ltaf` | Tree view with hidden files and full details |
+| `ltaf2` | Same as above with depth 2 |
+
+**Navigation:**
+
+| Command | Description |
+|---------|-------------|
+| `..` | `cd ../` |
+| `...` | `cd ../../` |
+| `....` | `cd ../../../` |
+| `z <query>` | Jump to frequently visited directory (zoxide) |
+| `mdcd <dir>` | Create directory and cd into it |
+| `cpwd` | Copy current directory path to clipboard |
+
+### Git
+
+**Abbreviations:**
+
+| Abbr | Command | Abbr | Command |
+|------|---------|------|---------|
+| `g` | `git` | `gp` | `git push` |
+| `ga` | `git add` | `gpb` | `git checkout -` |
+| `gaa` | `git add --all` | `gpf` | `git push --force-with-lease` |
+| `gau` | `git add --update` | `gpr` | `git pull --rebase` |
+| `gb` | `git branch` | `grb` | `git rebase` |
+| `gba` | `git branch --all` | `grba` | `git rebase --abort` |
+| `gbd` | `git branch --delete` | `grbc` | `git rebase --continue` |
+| `gbD` | `git branch --delete --force` | `grbi` | `git rebase --interactive` |
+| `gc` | `git commit --verbose` | `grh` | `git reset` |
+| `gca` | `git commit --verbose --all` | `grhh` | `git reset --hard` |
+| `gcam` | `git commit --all --message` | `gss` | `git status --short` |
+| `gcb` | `git checkout -b` | `gst` | `git status` |
+| `gcmsg` | `git commit --message` | `gsta` | `git stash push` |
+| `gco` | `git checkout` | `gstl` | `git stash list` |
+| `gd` | `git diff` | `gstp` | `git stash pop` |
+| `gds` | `git diff --staged` | `gsw` | `git switch` |
+| `gdt` | `git difftool --tool=difftastic` | `gswc` | `git switch --create` |
+| `gf` | `git fetch` | `gl` | `git pull` |
+| `gfa` | `git fetch --all --tags --prune` | `glog` | `git log --oneline --decorate --graph` |
+| `lg` | `lazygit` | `gloga` | `git log --oneline --decorate --graph --all` |
+
+**Configuration:**
+
+- Default branch: `main`
+- Pull strategy: Rebase
+- Auto-setup remote: Enabled (push without `-u`)
+- Merge conflict style: diff3
+- Pager: delta with line numbers and hyperlinks
+- Credential helper: GitHub CLI
+
+### Neovim
+
+**Abbreviations:**
+
+| Abbr | Command |
+|------|---------|
+| `n` | `nvim` |
+| `nv` | `nvim` |
+| `v` | `nvim` |
+| `vim` | `nvim` |
+| `vi` | `nvim` |
+
+`EDITOR` is set to `nvim`.
+
 ### Workspace
 
 Run Claude in the workspace directory from anywhere. Useful for configuring your workspace remotely.
@@ -240,13 +254,6 @@ wsi
 | Abbr | Command |
 |------|---------|
 | `y` | `yazi` |
-
-### VS Code
-
-| Abbr | Command |
-|------|---------|
-| `c` | `code` |
-| `cr` | `code -r` (reuse window) |
 
 ### Other Shortcuts
 
