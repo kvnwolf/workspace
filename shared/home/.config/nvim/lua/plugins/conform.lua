@@ -12,10 +12,7 @@ return {
         css = { "biome", "prettierd", stop_after_first = true },
         markdown = { "prettierd" },
       },
-      format_on_save = {
-        timeout_ms = 3000,
-        lsp_format = "fallback",
-      },
+      format_on_save = false,
     },
   },
 }
