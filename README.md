@@ -288,6 +288,7 @@ Custom prompt showing:
 - **Option key**: Right Option as Alt
 - **Window padding**: 16px
 - **Background opacity**: 90% with blur (radius 50)
+- **Window title**: Shows `owner/repo` for GitHub dirs, `~/path` elsewhere; defers to programs that set their own title
 - **Scroll sensitivity**: Reduced (0.5x)
 
 ## How Stow Works

@@ -1,3 +1,4 @@
 function fish_title
-    pwd | sed "s|/Users/$USER|~|" | sed "s|~/Developer/github.com/|github/|"
+    set -q argv[1]; and return
+    string replace "$HOME/Developer/github.com/" "" (pwd) | string replace "$HOME" "~"
 end
