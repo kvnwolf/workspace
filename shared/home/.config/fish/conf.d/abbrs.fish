@@ -1,0 +1,5 @@
+abbr -a cpwd 'pwd | pbcopy && echo "Copied: "(pwd)'
+abbr -a md 'mkdir -p'
+abbr -a pbc 'pbcopy'
+abbr -a pbp 'pbpaste'
+abbr -a reload 'set -gx FISH_RELOADED 1; fish'

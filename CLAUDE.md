@@ -42,7 +42,12 @@ function name -d "Description"
 end
 ```
 
-**conf.d/aliases.fish** - Command replacements:
+**conf.d/abbrs.fish** - General abbreviations not tied to any specific tool:
+```fish
+abbr -a md 'mkdir -p'
+```
+
+**conf.d/aliases.fish** - Command replacements (tool X replaces tool Y):
 ```fish
 alias cat 'bat'
 ```

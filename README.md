@@ -103,6 +103,7 @@ Fish shell becomes the default shell. Below are all shortcuts and configurations
 | `bi` | `bun init` |
 | `bin` | `bun install` |
 | `br` | `bun run` |
+| `brd` | `bun run dev` |
 | `brl` | `bun run lint` |
 | `brm` | `bun remove` |
 | `brs` | `bun run setup` |
