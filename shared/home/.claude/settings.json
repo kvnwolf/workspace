@@ -1,13 +1,141 @@
 {
   "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(* --help)",
+      "Bash(* --version)",
+      "Bash(bun add *)",
+      "Bash(bun build *)",
+      "Bash(bun info *)",
+      "Bash(bun install)",
+      "Bash(bun install *)",
+      "Bash(bun outdated)",
+      "Bash(bun outdated *)",
+      "Bash(bun pm bin)",
+      "Bash(bun pm bin *)",
+      "Bash(bun pm cache)",
+      "Bash(bun pm hash)",
+      "Bash(bun pm hash *)",
+      "Bash(bun pm ls)",
+      "Bash(bun pm ls *)",
+      "Bash(bun pm why *)",
+      "Bash(bun remove *)",
+      "Bash(bun run *)",
+      "Bash(bun test)",
+      "Bash(bun test *)",
+      "Bash(bun x *)",
+      "Bash(bunx *)",
+      "Bash(gh browse *)",
+      "Bash(gh issue list *)",
+      "Bash(gh issue view *)",
+      "Bash(gh pr checks *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr status)",
+      "Bash(gh pr view *)",
+      "Bash(gh repo view *)",
+      "Bash(gh run list *)",
+      "Bash(gh run view *)",
+      "Bash(gh search *)",
+      "Bash(gh status)",
+      "Bash(grep *)",
+      "WebFetch",
+      "WebSearch"
+    ]
+  },
+  "model": "opus",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat ~/.claude/hooks/session-context.md"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/kvnwolf/.claude/hooks/gsd-check-update.js\""
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat ~/.claude/hooks/session-context.md ~/.claude/hooks/skill-evaluation.md"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat ~/.claude/hooks/skill-evaluation.md"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Deny if the command uses `npm` or `npx`. The user requires `bun` instead of `npm`, and `bunx <pkg>@latest` instead of `npx`. If denied, respond with exactly: {\"ok\": false, \"reason\": \"BLOCKED: Use `bun` instead of `npm`, and `bunx <pkg>@latest` instead of `npx`. Save this preference in project memory.\"}. Otherwise respond with {\"ok\": true}. $ARGUMENTS"
+          },
+          {
+            "type": "prompt",
+            "prompt": "Deny if the command uses `agent-browser` directly (not via bunx). Also deny if it uses `open` subcommand without `--headed`. If denied, respond with exactly: {\"ok\": false, \"reason\": \"BLOCKED: Use `bunx agent-browser@latest` instead, and `open` subcommands must include `--headed`. Save this preference in project memory.\"}. Otherwise respond with {\"ok\": true}. $ARGUMENTS"
+          },
+          {
+            "type": "prompt",
+            "prompt": "Deny if the command uses `git -C` or `git -C <path>`. If denied, respond with exactly: {\"ok\": false, \"reason\": \"BLOCKED: Never use `git -C <path>`. Run git commands directly without the `-C` flag.\"}. Otherwise respond with {\"ok\": true}. $ARGUMENTS"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "ONLY deny if the content being written adds or modifies dependencies (dependencies, devDependencies, peerDependencies, optionalDependencies). Any other package.json edit is allowed. If denied, respond with exactly: {\"ok\": false, \"reason\": \"BLOCKED: Run `bun add`/`bun remove` immediately instead. Never edit package.json dependencies directly. Save this preference in project memory.\"}. Otherwise respond with {\"ok\": true}. $ARGUMENTS"
+          }
+        ]
+      },
+      {
+        "matcher": "WebSearch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/inject-current-date.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lint-changes.sh"
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 0
   },
-  "permissions": {
-    "allow": [
-      "WebSearch"
-    ]
-  }
+  "skipDangerousModePermissionPrompt": true
 }

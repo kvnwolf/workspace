@@ -1,10 +1,3 @@
-## Documentation
-
-| File | Purpose | Update When |
-|------|---------|-------------|
-| `README.md` | User-facing documentation: tools, shortcuts, configurations, installation guide | Fish abbreviations/functions change, CLI tools or casks are added/removed, shell shortcuts change, Ghostty/Starship config changes |
-| `CLAUDE.md` | Developer/AI instructions: conventions, workflows, configuration patterns | Directory structure changes, naming conventions change, config file locations/formats change, stow workflows are modified |
-
 ## Structure
 
 - `macos/home/` → macOS-specific dotfiles
@@ -82,6 +75,8 @@ Edit `shared/home/.config/nvim/`. LazyVim-based. Config in `lua/config/*.lua`, p
 - `shared/home/.claude/settings.json` → statusline config, permissions
 - `shared/home/.claude/statusline.sh` → custom statusline script (receives JSON via stdin)
 
+Permissions in `settings.json` `permissions.allow` array must be sorted alphabetically. Group by tool name: `Bash(...)` entries first, then bare tool names (`WebFetch`, `WebSearch`).
+
 ## Syncing Dotfiles
 
 **IMPORTANT**: After creating files in any of the home folders, sync to local machine:
@@ -118,3 +113,10 @@ stow --adopt --no-folding -d shared -t ~ home
 ```
 
 Use `shared/` for cross-platform config, `macos/` for macOS-only.
+
+## Documentation
+
+| File | Purpose | Update When |
+|------|---------|-------------|
+| `README.md` | User-facing documentation: tools, shortcuts, configurations, installation guide | Fish abbreviations/functions change, CLI tools or casks are added/removed, shell shortcuts change, Ghostty/Starship config changes |
+| `CLAUDE.md` | Developer/AI instructions: conventions, workflows, configuration patterns | Directory structure changes, naming conventions change, config file locations/formats change, stow workflows are modified |
