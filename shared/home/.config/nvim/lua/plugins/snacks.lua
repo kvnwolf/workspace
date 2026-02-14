@@ -4,7 +4,10 @@ return {
     opts = {
       picker = {
         sources = {
-          explorer = { hidden = true },
+          explorer = {
+            hidden = true,
+            layout = { preset = "sidebar", preview = "main" },
+          },
           files = { hidden = true },
           grep = { hidden = true },
         },
