@@ -1,6 +1,7 @@
 alias cat 'bat'
 alias curl 'curlie'
 alias find 'fd'
+alias freeze 'freeze -c user'
 alias grep 'rg'
 alias ls 'eza'
 alias man 'tldr'

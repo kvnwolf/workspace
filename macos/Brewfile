@@ -26,6 +26,8 @@ brew "tokei"
 brew "yazi"
 brew "zoxide"
 
+tap "charmbracelet/tap"
+brew "charmbracelet/tap/freeze"
 tap "oven-sh/bun"
 brew "oven-sh/bun/bun"
 
