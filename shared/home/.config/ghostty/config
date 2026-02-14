@@ -14,8 +14,8 @@ font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-style-bold-italic = Bold Italic
-font-size = 13
-adjust-cell-height = 12
+font-size = 14
+adjust-cell-height = 16
 
 # Opacity of split windows
 unfocused-split-opacity = 0.97  

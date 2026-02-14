@@ -286,7 +286,7 @@ Custom prompt showing:
 ## Terminal (Ghostty)
 
 - **Theme**: Catppuccin Mocha
-- **Font**: GeistMono Nerd Font Mono (13pt)
+- **Font**: GeistMono Nerd Font Mono (14pt)
 - **Shell integration**: Fish
 - **Auto-quit**: When last window closes
 - **Option key**: Right Option as Alt
