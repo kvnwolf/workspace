@@ -57,6 +57,7 @@ Naming patterns: git abbrs = `g*` (gst, gd, gp), directory listing = `l*` (l, la
 ## Configuring Git
 
 Edit `shared/home/.config/git/config`. INI format with tab indentation.
+Edit `shared/home/.config/git/attributes` for diff/merge behavior per file pattern.
 
 ## Configuring GitHub CLI
 
