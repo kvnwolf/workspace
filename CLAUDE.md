@@ -65,6 +65,10 @@ Edit `shared/home/.config/ghostty/config`. Simple `key = value` format.
 
 Edit `shared/home/.config/starship.toml`. TOML format with module sections.
 
+## Configuring tmux
+
+Edit `shared/home/.config/tmux/tmux.conf`. Standard tmux config format.
+
 ## Configuring Neovim
 
 Edit `shared/home/.config/nvim/`. LazyVim-based. Config in `lua/config/*.lua`, plugins in `lua/plugins/*.lua`. Extras in `init.lua`. Snippets in `snippets/*.json`.

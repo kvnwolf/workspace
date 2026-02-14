@@ -62,6 +62,7 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [starship](https://starship.rs/) | | Cross-shell prompt |
 | [stow](https://www.gnu.org/software/stow/) | | Symlink farm manager |
 | [tldr](https://tldr.sh/) | `man` | Practical examples instead of verbose manuals |
+| [tmux](https://github.com/tmux/tmux) | | Terminal multiplexer |
 | [tokei](https://github.com/XAMPPRocky/tokei) | | Code statistics |
 | [yazi](https://github.com/sxyazi/yazi) | | Blazing fast terminal file manager |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | | Smarter directory jumping |
