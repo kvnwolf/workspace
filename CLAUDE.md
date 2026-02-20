@@ -130,3 +130,4 @@ Use `shared/` for cross-platform config, `macos/` for macOS-only.
 |------|---------|-------------|
 | `README.md` | User-facing documentation: tools, shortcuts, configurations, installation guide | Fish abbreviations/functions change, CLI tools or casks are added/removed, shell shortcuts change, Ghostty/Starship config changes |
 | `CLAUDE.md` | Developer/AI instructions: conventions, workflows, configuration patterns | Directory structure changes, naming conventions change, config file locations/formats change, stow workflows are modified |
+| `shared/home/.claude/CLAUDE.md` | Personal global instructions for Claude CLI: language preferences, tool defaults | Language or communication preferences change, tool behavior defaults change |
