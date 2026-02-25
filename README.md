@@ -292,8 +292,41 @@ Custom prompt showing:
 - **Option key**: Right Option as Alt
 - **Window padding**: 16px
 - **Background opacity**: 90% with blur (radius 50)
+- **Unfocused split opacity**: 75%
 - **Window title**: Shows `owner/repo` for GitHub dirs, `~/path` elsewhere; defers to programs that set their own title
 - **Scroll sensitivity**: Reduced (0.5x)
+
+**Split keybindings** (prefix: `Ctrl+;`):
+
+| Shortcut | Action |
+|----------|--------|
+| `prefix + \` | Split right |
+| `prefix + -` | Split down |
+| `prefix + h/j/k/l` | Navigate splits |
+| `prefix + H/J/K/L` | Resize splits |
+| `prefix + z` | Toggle split zoom |
+| `prefix + =` | Equalize splits |
+| `prefix + x` | Close split |
+
+## Terminal Multiplexer (tmux)
+
+**Split keybindings** (prefix: `Ctrl+;`):
+
+| Shortcut | Action |
+|----------|--------|
+| `prefix + \` | Split vertical |
+| `prefix + -` | Split horizontal |
+| `prefix + h/j/k/l` | Navigate panes |
+| `prefix + H/J/K/L` | Resize panes (repeatable) |
+| `prefix + z` | Toggle pane zoom |
+| `prefix + x` | Close pane |
+
+**Configuration:**
+
+- Vi mode for copy
+- Mouse support enabled
+- Windows numbered from 1
+- Status bar at the top
 
 ## How Stow Works
 

@@ -18,7 +18,7 @@ font-size = 14
 adjust-cell-height = 16
 
 # Opacity of split windows
-unfocused-split-opacity = 0.97  
+unfocused-split-opacity = 0.75
 
 background-opacity = 0.90
 background-blur-radius = 50
@@ -45,3 +45,18 @@ window-padding-y = 16
 
 # Decrease scroll sensitivity
 mouse-scroll-multiplier = 0.5
+
+# Split keybindings (vim-like, prefix: ctrl+;)
+keybind = ctrl+semicolon>backslash=new_split:right
+keybind = ctrl+semicolon>minus=new_split:down
+keybind = ctrl+semicolon>h=goto_split:left
+keybind = ctrl+semicolon>j=goto_split:bottom
+keybind = ctrl+semicolon>k=goto_split:top
+keybind = ctrl+semicolon>l=goto_split:right
+keybind = ctrl+semicolon>shift+h=resize_split:left,40
+keybind = ctrl+semicolon>shift+j=resize_split:down,40
+keybind = ctrl+semicolon>shift+k=resize_split:up,40
+keybind = ctrl+semicolon>shift+l=resize_split:right,40
+keybind = ctrl+semicolon>z=toggle_split_zoom
+keybind = ctrl+semicolon>equal=equalize_splits
+keybind = ctrl+semicolon>x=close_surface
