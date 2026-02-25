@@ -82,13 +82,14 @@ Edit `shared/home/.config/nvim/`. LazyVim-based. Config in `lua/config/*.lua`, p
 ## Configuring Claude CLI
 
 - `shared/home/.claude/CLAUDE.md` → personal global instructions for Claude CLI
-- `shared/home/.claude/settings.json` → statusline config, hooks, permissions
+- `shared/home/.claude/settings.json` → statusline config, permissions, plugins
 - `shared/home/.claude/statusline.sh` → custom statusline script (receives JSON via stdin)
 - `shared/home/.claude/hooks/` → PreToolUse hook scripts (bash, executable)
+- `shared/home/.claude/skills/` → custom skills (each in its own subdirectory with SKILL.md)
 
 Permissions in `settings.json` `permissions.allow` array must be sorted alphabetically. Group by tool name: `Bash(...)` entries first, then bare tool names (`WebFetch`, `WebSearch`).
 
-Settings key order: `model` → `includeCoAuthoredBy` → `skipDangerousModePermissionPrompt` → `statusLine` → `hooks` → `permissions`.
+Settings key order: `includeCoAuthoredBy` → `permissions` → `model` → `statusLine` → `enabledPlugins` → `skipDangerousModePermissionPrompt`.
 
 ## Syncing Dotfiles
 
