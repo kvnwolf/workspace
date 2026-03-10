@@ -342,19 +342,6 @@ This means:
 - Changes are version-controlled and shareable
 - Easy to see what's customized vs default
 
-## Manual Stow Commands
-
-After the initial setup, you only need these when adding new files:
-
-```bash
-# Create symlinks for new files
-stow --no-folding -d shared -t ~ home
-stow --no-folding -d macos -t ~ home
-
-# Remove orphaned symlinks after deleting files
-stow -R --no-folding -d shared -t ~ home
-```
-
 ## Customization
 
 - **macOS-only configs**: Add to `macos/home/`

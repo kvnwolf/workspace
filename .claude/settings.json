@@ -1,0 +1,19 @@
+{
+  "enabledPlugins": {
+    "base@kvnwolf-devtools": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/sync-dotfiles.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

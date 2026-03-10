@@ -49,6 +49,6 @@
     "command": "~/.claude/statusline.sh",
     "padding": 0
   },
-  "enabledPlugins": {},
+  "language": "Español",
   "skipDangerousModePermissionPrompt": true
 }

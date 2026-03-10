@@ -91,28 +91,6 @@ Permissions in `settings.json` `permissions.allow` array must be sorted alphabet
 
 Settings key order: `includeCoAuthoredBy` → `permissions` → `model` → `statusLine` → `enabledPlugins` → `skipDangerousModePermissionPrompt`.
 
-## Syncing Dotfiles
-
-**IMPORTANT**: After creating files in any of the home folders, sync to local machine:
-
-```bash
-stow --no-folding -d shared -t ~ home
-stow --no-folding -d macos -t ~ home
-```
-
-Only needed for **new files** - existing symlinks update automatically.
-
-## Removing Dotfiles
-
-After deleting files from the repo, use `-R` (restow) to remove orphaned symlinks:
-
-```bash
-rm -rf shared/home/.config/tool
-stow -R --no-folding -d shared -t ~ home
-```
-
-The `-R` flag unstows (removes symlinks) then re-stows, so deleted files won't have symlinks recreated.
-
 ## Adopting Local Files
 
 To move an existing local file into the repo:
@@ -128,10 +106,3 @@ stow --adopt --no-folding -d shared -t ~ home
 
 Use `shared/` for cross-platform config, `macos/` for macOS-only.
 
-## Documentation
-
-| File | Purpose | Update When |
-|------|---------|-------------|
-| `README.md` | User-facing documentation: tools, shortcuts, configurations, installation guide | Fish abbreviations/functions change, CLI tools or casks are added/removed, shell shortcuts change, Ghostty/Starship config changes |
-| `CLAUDE.md` | Developer/AI instructions: conventions, workflows, configuration patterns | Directory structure changes, naming conventions change, config file locations/formats change, stow workflows are modified |
-| `shared/home/.claude/CLAUDE.md` | Personal global instructions for Claude CLI: language preferences, tool defaults | Language or communication preferences change, tool behavior defaults change |
