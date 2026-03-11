@@ -6,6 +6,7 @@ return {
         sources = {
           explorer = {
             hidden = true,
+            ignored = true,
             layout = { preset = "sidebar", preview = "main" },
           },
           files = { hidden = true },
