@@ -41,7 +41,8 @@
       "Bash(grep *)",
       "WebFetch",
       "WebSearch"
-    ]
+    ],
+    "defaultMode": "bypassPermissions"
   },
   "model": "opus",
   "statusLine": {
