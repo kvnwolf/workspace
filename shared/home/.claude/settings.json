@@ -44,12 +44,12 @@
     ],
     "defaultMode": "bypassPermissions"
   },
-  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 0
   },
   "language": "Español",
+  "voiceEnabled": true,
   "skipDangerousModePermissionPrompt": true
 }

@@ -17,7 +17,7 @@ brew install PACKAGE
 
 Brewfile organization:
 1. Standard brews (alphabetical)
-2. Custom taps with their brews
+2. Custom taps with their brews/casks
 3. Casks (alphabetical)
 
 ## Configuring Fish
@@ -89,7 +89,7 @@ Edit `shared/home/.config/nvim/`. LazyVim-based. Config in `lua/config/*.lua`, p
 
 Permissions in `settings.json` `permissions.allow` array must be sorted alphabetically. Group by tool name: `Bash(...)` entries first, then bare tool names (`WebFetch`, `WebSearch`).
 
-Settings key order: `includeCoAuthoredBy` → `permissions` → `model` → `statusLine` → `enabledPlugins` → `skipDangerousModePermissionPrompt`.
+Settings key order: `includeCoAuthoredBy` → `permissions` → `statusLine` → `language` → `voiceEnabled` → `skipDangerousModePermissionPrompt`.
 
 ## Adopting Local Files
 

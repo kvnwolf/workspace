@@ -77,6 +77,7 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [Claude](https://claude.ai/) | AI assistant app |
 | [Claude Code](https://claude.ai/code) | AI coding assistant CLI |
 | [CleanShot](https://cleanshot.com/) | Screenshot and recording tool |
+| [cmux](https://github.com/manaflow-ai/cmux) | AI-powered terminal multiplexer |
 | [Discord](https://discord.com/) | Communication platform |
 | [Ghostty](https://ghostty.org/) | GPU-accelerated terminal |
 | [Google Chrome](https://www.google.com/chrome/) | Web browser |
