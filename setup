@@ -215,6 +215,19 @@ if command_exists ya; then
   fi
 fi
 
+if command_exists bun; then
+  print_header "Bun Global Packages"
+  print_description "Installs global packages via bun (e.g. Claude Code)."
+  if should_continue; then
+    echo ""
+    bun install -g @anthropic-ai/claude-code
+    print_success "Bun global packages installed"
+  else
+    echo ""
+    print_info "Skipped"
+  fi
+fi
+
 if command_exists fish; then
   print_header "Default Shell"
   print_description "Changes your login shell to fish."

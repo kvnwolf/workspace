@@ -75,7 +75,6 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [1Password](https://1password.com/) | Password manager |
 | [Caffeine](https://intelliscapesolutions.com/apps/caffeine) | Prevent Mac from going to sleep |
 | [Claude](https://claude.ai/) | AI assistant app |
-| [Claude Code](https://claude.ai/code) | AI coding assistant CLI |
 | [CleanShot](https://cleanshot.com/) | Screenshot and recording tool |
 | [cmux](https://github.com/manaflow-ai/cmux) | AI-powered terminal multiplexer |
 | [Discord](https://discord.com/) | Communication platform |
@@ -88,6 +87,14 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [Slack](https://slack.com/) | Team communication |
 | [Vanilla](https://matthewpalmer.net/vanilla/) | Menu bar organizer |
 | [WhatsApp](https://www.whatsapp.com/) | Messaging app |
+
+### Bun Global Packages
+
+Installed via `bun install -g` during setup, separate from Homebrew.
+
+| Package | Description |
+|---------|-------------|
+| [Claude Code](https://claude.ai/code) | AI coding assistant CLI |
 
 ## Shell Configuration
 
