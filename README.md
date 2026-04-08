@@ -48,7 +48,7 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [fd](https://github.com/sharkdp/fd) | `find` | Simpler syntax, respects .gitignore, faster |
 | [fish](https://fishshell.com/) | | User-friendly shell |
 | [fisher](https://github.com/jorgebucaran/fisher) | | Fish plugin manager |
-| [fnm](https://github.com/Schniz/fnm) | | Fast Node.js version manager |
+| [vite+](https://viteplus.dev/) | | Unified web toolchain with Node.js version management |
 | [freeze](https://github.com/charmbracelet/freeze) | | Code screenshot generator |
 | [fzf](https://github.com/junegunn/fzf) | | Fuzzy finder |
 | [gh](https://cli.github.com/) | | GitHub CLI |
