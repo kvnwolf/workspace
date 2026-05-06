@@ -89,7 +89,7 @@ Edit `shared/home/.config/nvim/`. LazyVim-based. Config in `lua/config/*.lua`, p
 
 Permissions in `settings.json` `permissions.allow` array must be sorted alphabetically. Group by tool name: `Bash(...)` entries first, then bare tool names (`WebFetch`, `WebSearch`).
 
-Settings key order: `includeCoAuthoredBy` → `permissions` → `statusLine` → `language` → `voiceEnabled` → `skipDangerousModePermissionPrompt`.
+Settings key order: `includeCoAuthoredBy` → `permissions` → `statusLine` → `language` → `effortLevel` → `skipDangerousModePermissionPrompt` → `editorMode` → `preferredNotifChannel` → `teammateMode` → `remoteControlAtStartup` → `skipAutoPermissionPrompt` → `voiceEnabled`.
 
 ## Adopting Local Files
 

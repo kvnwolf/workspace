@@ -42,7 +42,7 @@
       "WebFetch",
       "WebSearch"
     ],
-    "defaultMode": "bypassPermissions"
+    "defaultMode": "auto"
   },
   "statusLine": {
     "type": "command",
@@ -50,6 +50,12 @@
     "padding": 0
   },
   "language": "Español",
-  "voiceEnabled": true,
-  "skipDangerousModePermissionPrompt": true
+  "effortLevel": "xhigh",
+  "skipDangerousModePermissionPrompt": true,
+  "editorMode": "vim",
+  "preferredNotifChannel": "ghostty",
+  "teammateMode": "tmux",
+  "remoteControlAtStartup": false,
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
 }
