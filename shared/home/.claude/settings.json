@@ -44,18 +44,57 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
+  "worktree": {
+    "baseRef": "fresh"
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 0
   },
+  "enabledPlugins": {
+    "dobby@dobby": true,
+    "neon@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "ponytail@ponytail": true,
+    "linear@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "dobby": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/kvnwolf/Developer/github.com/kvnwolf/dobby"
+      },
+      "autoUpdate": true
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
   "language": "Español",
   "effortLevel": "xhigh",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "editorMode": "vim",
-  "preferredNotifChannel": "ghostty",
-  "teammateMode": "tmux",
+  "skipWorkflowUsageWarning": true,
+  "editorMode": "normal",
+  "verbose": false,
+  "preferredNotifChannel": "auto",
+  "teammateMode": "auto",
   "remoteControlAtStartup": false,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true
 }

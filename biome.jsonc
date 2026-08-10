@@ -1,0 +1,6 @@
+{
+  "extends": ["@kvnwolf/dobby/biome/core"],
+  "files": {
+    "includes": ["!shared/home/.config/nvim/**/*.json"]
+  }
+}

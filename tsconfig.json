@@ -1,0 +1,4 @@
+{
+  "extends": "@kvnwolf/dobby/tsconfig",
+  "include": ["workspace.d.ts"]
+}

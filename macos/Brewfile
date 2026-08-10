@@ -31,6 +31,8 @@ tap "manaflow-ai/cmux"
 cask "cmux"
 tap "oven-sh/bun"
 brew "oven-sh/bun/bun"
+tap "raine/claude-code-proxy"
+brew "raine/claude-code-proxy/claude-code-proxy"
 
 cask "1password"
 cask "caffeine"

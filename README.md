@@ -18,6 +18,17 @@ bash <(curl -fsSL https://kvnwolf.com/setup-workspace)
 
 The setup script is interactive—each step can be skipped by pressing `ESC`.
 
+## Repository Development
+
+This repository has no application or development server. Install its pinned tooling and run the quality gate with:
+
+```bash
+bun install
+bunx dobby check
+```
+
+`@kvnwolf/dobby` provides the repository gate and workflow contract; `dobby.config.json` records which documentation must stay synchronized with configuration changes.
+
 ## What Gets Installed
 
 ### macOS System Defaults
@@ -42,6 +53,7 @@ Command-line tools installed via Homebrew. Some are modern replacements for trad
 | [bat](https://github.com/sharkdp/bat) | `cat` | Syntax highlighting, line numbers, Git integration |
 | [btop](https://github.com/aristocratos/btop) | `top` | Beautiful TUI, mouse support, resource graphs |
 | [bun](https://bun.sh/) | | JavaScript runtime and toolkit |
+| [claude-code-proxy](https://github.com/raine/claude-code-proxy) | | Run Claude Code with a ChatGPT subscription |
 | [curlie](https://github.com/rs/curlie) | `curl` | Colored output, httpie-like formatting |
 | [difftastic](https://github.com/Wilfred/difftastic) | | Structural diff tool |
 | [eza](https://github.com/eza-community/eza) | `ls` | Icons, colors, Git status integration |
@@ -149,8 +161,39 @@ All Claude commands follow the pattern `cl[c|r][s][d]` where:
 
 **Configuration:**
 
-- Co-authored-by: Disabled
+- Default model: Opus with a 1M-token context window
+- Permission mode: Auto
+- Worktrees start from a fresh remote base
+- Fullscreen TUI with automatic notifications and teammate mode
 - Status line: Custom script showing directory, git branch, model, and context usage
+- Enabled integrations: Dobby, Linear, Neon, Vercel, security guidance, Ponytail, and rust-analyzer LSP
+- Co-authored-by: Disabled
+
+**OpenAI via claude-code-proxy:**
+
+After installing the Brewfile on a new computer, authenticate once with a ChatGPT Plus or Pro account:
+
+```bash
+claude-code-proxy codex auth login
+```
+
+If the browser does not open automatically, open the URL printed by the login command and leave that terminal running until the callback completes.
+
+Run Claude Code through OpenAI with:
+
+```bash
+clo
+```
+
+The `clo` function starts the proxy on demand and tracks every Claude session opened through it. When the last session exits, it prints a notice and stops the proxy automatically. Concurrent `clo` sessions share the same proxy. If the proxy was started manually, `clo` reuses it but leaves it running for you to stop with `Ctrl+C`.
+
+Claude Code uses the `gpt-5.6-sol[1m]` context policy and auto-compacts at 900,000 tokens, leaving headroom within the model's 1.05M context window for output and protocol overhead.
+
+The proxy is intentionally not configured as a background service. Its OAuth credential is stored locally and is never committed to this repository. The regular `claude` command continues to connect directly to Anthropic.
+
+| Function | Description |
+|----------|-------------|
+| `clo [args]` | Run Claude Code with OpenAI Codex using the ChatGPT login |
 
 ### Directory Listing & Navigation
 

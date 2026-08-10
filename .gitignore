@@ -3,3 +3,4 @@
 *.tsbuildinfo
 .DS_Store
 node_modules
+STATE.md

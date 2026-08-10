@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "update_when": [
+        "Any user-facing change (tools, configs, shortcuts, workflows, etc.)"
+      ]
+    },
+    {
+      "path": "CLAUDE.md",
+      "update_when": [
+        "Directory structure changes",
+        "Naming conventions change",
+        "Config file locations/formats change",
+        "Stow workflows are modified"
+      ]
+    },
+    {
+      "path": "CONTEXT.md",
+      "update_when": ["Domain terms, relationships, or ambiguities change"]
+    }
+  ],
+  "tracker": {
+    "type": "github"
+  }
+}

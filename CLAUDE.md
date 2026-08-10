@@ -89,7 +89,7 @@ Edit `shared/home/.config/nvim/`. LazyVim-based. Config in `lua/config/*.lua`, p
 
 Permissions in `settings.json` `permissions.allow` array must be sorted alphabetically. Group by tool name: `Bash(...)` entries first, then bare tool names (`WebFetch`, `WebSearch`).
 
-Settings key order: `includeCoAuthoredBy` → `permissions` → `statusLine` → `language` → `effortLevel` → `skipDangerousModePermissionPrompt` → `editorMode` → `preferredNotifChannel` → `teammateMode` → `remoteControlAtStartup` → `skipAutoPermissionPrompt` → `voiceEnabled`.
+Settings key order: `includeCoAuthoredBy` → `permissions` → `statusLine` → `language` → `effortLevel` → `skipDangerousModePermissionPrompt` → `editorMode` → `tui` → `preferredNotifChannel` → `teammateMode` → `remoteControlAtStartup` → `skipAutoPermissionPrompt` → `voiceEnabled`.
 
 ## Adopting Local Files
 
@@ -105,4 +105,35 @@ stow --adopt --no-folding -d shared -t ~ home
 ```
 
 Use `shared/` for cross-platform config, `macos/` for macOS-only.
+
+## Product
+
+Kevin Wolf's Workspace is a personal macOS development environment for installing and maintaining system defaults, tools, and dotfiles. It is maintained for the repository owner rather than as a general-purpose starter template.
+
+## Stack
+
+- Bash for the interactive bootstrap script
+- Fish as the interactive shell
+- Homebrew Bundle via `macos/Brewfile` for packages and applications
+- GNU Stow for symlinking `macos/home/` and `shared/home/` into the home directory
+- JSON, YAML, TOML, INI, and Fish files for tool configuration
+
+This is a configuration repository with no application or server target. `dobby up` can prepare a worktree, but `dobby dev` has no development process or URL to expose.
+
+## Module Map
+
+- [`setup`](setup) — interactive bootstrap for macOS defaults, packages, dotfiles, and the default shell
+- [`macos/`](macos/) — macOS-specific packages and dotfiles
+- [`shared/`](shared/) — cross-platform dotfiles
+
+## Conventions
+
+- Organize configuration by its owning tool under `macos/home/` or `shared/home/`; do not introduce type-based `components/`, `services/`, or `lib/` buckets.
+- Keep each configuration slice co-located and inline by default.
+- Do not add barrel files; callers and documentation should reference the concrete file path.
+- Give each new cohesive module its own `CONTEXT.md` covering purpose, files, interface, invariants, and what is not included.
+
+## Workflow Config
+
+`/dobby:execute` runs `bunx dobby up`. Because this repository has no app target, `bunx dobby env` exposes no development URL and verification is programmatic. The issue tracker is selected by the top-level `tracker` key in `dobby.config.json`; backlog skills support `github`, `linear`, and `local`.
 
