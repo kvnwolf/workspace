@@ -185,7 +185,7 @@ Run Claude Code through OpenAI with:
 clo
 ```
 
-The `clo` function starts the proxy on demand and tracks every Claude session opened through it. When the last session exits, it prints a notice and stops the proxy automatically. Concurrent `clo` sessions share the same proxy. If the proxy was started manually, `clo` reuses it but leaves it running for you to stop with `Ctrl+C`.
+The `clo` function starts the proxy on demand and tracks every Claude session opened through it. When the last session exits, it prints a notice and stops the proxy automatically. Concurrent `clo` sessions share the same proxy. If 127.0.0.1:18765 is already responding without a valid proxy PID managed by `clo`, `clo` rejects the listener and aborts.
 
 Claude Code uses the `gpt-5.6-sol[1m]` context policy and auto-compacts at 900,000 tokens, leaving headroom within the model's 1.05M context window for output and protocol overhead.
 
