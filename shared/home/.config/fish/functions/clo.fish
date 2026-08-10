@@ -409,7 +409,7 @@ function clo --description "Run Claude Code with OpenAI and manage its local pro
     set -lx ANTHROPIC_AUTH_TOKEN unused
     set -lx ANTHROPIC_MODEL 'gpt-5.6-sol[1m]'
     set -lx ANTHROPIC_SMALL_FAST_MODEL 'gpt-5.6-luna[1m]'
-    set -lx CLAUDE_CODE_AUTO_COMPACT_WINDOW 900000
+    set -lx CLAUDE_CODE_AUTO_COMPACT_WINDOW 272000
     set -lx CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC 1
     set -lx CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK 1
 

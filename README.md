@@ -187,7 +187,7 @@ clo
 
 The `clo` function starts the proxy on demand and tracks every Claude session opened through it. When the last session exits, it prints a notice and stops the proxy automatically. Concurrent `clo` sessions share the same proxy. If 127.0.0.1:18765 is already responding without a valid proxy PID managed by `clo`, `clo` rejects the listener and aborts.
 
-Claude Code uses the `gpt-5.6-sol[1m]` context policy and auto-compacts at 900,000 tokens, leaving headroom within the model's 1.05M context window for output and protocol overhead.
+Claude Code uses the `gpt-5.6-sol[1m]` local context policy and auto-compacts at 272,000 tokens, the documented safe threshold for Codex GPT-5.6 subscription models. The `[1m]` suffix only controls Claude Code's local policy; it does not enlarge the provider's context window.
 
 The proxy is intentionally not configured as a background service. Its OAuth credential is stored locally and is never committed to this repository. The regular `claude` command continues to connect directly to Anthropic.
 
