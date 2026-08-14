@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = true
+command_timeout = 1000
 
 format = """
 $username\
@@ -9,7 +10,7 @@ $localip\
 $shlvl\
 $singularity\
 $kubernetes\
-${custom.directory}\
+$directory\
 $git_branch\
 $git_commit\
 $git_state\
@@ -32,16 +33,13 @@ format = ' [\[ $duration\]]($style)'
 style = "dimmed"
 
 [directory]
-disabled = true
-
-[custom.directory]
-command = '''
-set output $(pwd | sed "s|/Users/$USER|~|" | sed "s|~/Developer/github.com/| |")
-echo "$output"
-'''
-when = true
-format = "[$output]($style) "
+format = "[$path]($style) "
 style = "cyan bold"
+truncation_length = 0
+truncate_to_repo = false
+
+[directory.substitutions]
+"~/Developer/github.com/" = " "
 
 [docker_context]
 symbol = " "

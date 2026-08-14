@@ -44,7 +44,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "worktree": {
     "baseRef": "fresh"
   },
@@ -84,7 +84,7 @@
     }
   },
   "language": "Español",
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
